@@ -17,7 +17,7 @@ contract Save {
 
     function depositEther() public payable {
         require(msg.value > 0, "Deposit amount must be greater than zero");
-        etherBalances[msg.sender] = etherBalances[msg.sender] +msg.value;
+        etherBalances[msg.sender] = etherBalances[msg.sender] + msg.value;
         emit DepositEther(msg.sender, msg.value, "ETH");
     }
 
