@@ -15,15 +15,14 @@ contract Save {
     event WithdrawalERC20(address indexed user, uint amount, string assetType);
     event AllowanceApproved(address indexed user, uint amount);
 
+    constructor(address _token) {
+        token = ERC20(_token);
+    }
+
     function depositEther() public payable {
         require(msg.value > 0, "Deposit amount must be greater than zero");
         etherBalances[msg.sender] = etherBalances[msg.sender] + msg.value;
         emit DepositEther(msg.sender, msg.value, "ETH");
-    }
-
-    function allowanceApproveERC20(uint amount) public {
-        token.approve(address(this), amount);
-        emit AllowanceApproved(msg.sender, amount);
     }
 
     function depositERC20(uint amount) public {
