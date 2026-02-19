@@ -2,7 +2,7 @@
 
 pragma solidity >=0.7.0 <0.9.0;
 
-import {SchoolToken} from 'contracts/SchoolToken.sol';
+import {SchoolToken} from './SchoolToken.sol';
 
 contract SMS{
     SchoolToken token;
